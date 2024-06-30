@@ -77,11 +77,23 @@ function render() {
 // Event listeners for buttons
 document.getElementById('scene1Button').addEventListener('click', () => {
     currentRenderTarget = renderTarget1;
+    switchContent(1);
 });
 
 document.getElementById('scene2Button').addEventListener('click', () => {
     currentRenderTarget = renderTarget2;
+    switchContent(2);
 });
+
+// Function to switch HTML content
+function switchContent(sceneNumber) {
+    // Remove 'active' class from all content divs
+    document.querySelectorAll('.content').forEach(content => {
+        content.classList.remove('active');
+    });
+    // Add 'active' class to the selected content div
+    document.getElementById(`content${sceneNumber}`).classList.add('active');
+}
 
 // Start the rendering loop
 render();

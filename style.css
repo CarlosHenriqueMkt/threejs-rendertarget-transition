@@ -22,3 +22,11 @@ button {
   padding: 10px 20px;
   background: white; 
 }
+
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
+  color: white;
+}
